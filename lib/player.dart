@@ -78,6 +78,10 @@ class Pacman extends SimplePlayer with ObjectCollision {
     ]));
   }
 
+  int getPoints() {
+    return points;
+  }
+
   void addPoints() {
     points += 10;
   }

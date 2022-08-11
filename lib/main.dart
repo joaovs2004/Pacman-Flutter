@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
 import 'package:labirinto_escribo/player.dart';
 import 'package:labirinto_escribo/points.dart';
+import 'package:labirinto_escribo/points_interface.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,16 +19,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyWidget(),
+      home: const Game(),
     );
   }
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({Key? key}) : super(key: key);
+class Game extends StatelessWidget {
+  const Game({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Pacman pacman = Pacman(Vector2(180, 234));
+
     return BonfireTiledWidget(
       joystick: Joystick(
           keyboardConfig: KeyboardConfig(
@@ -38,7 +41,14 @@ class MyWidget extends StatelessWidget {
             'points': (properties) => Points(properties.position)
           },
           forceTileSize: const Size(7, 7)),
-      player: Pacman(Vector2(180, 234)),
+      overlayBuilderMap: {
+        'points': (context, game) => PointsInterface(
+              game: game,
+              pacman: pacman,
+            )
+      },
+      initialActiveOverlays: const [PointsInterface.overlaykey],
+      player: pacman,
       cameraConfig: CameraConfig(
         moveOnlyMapArea: false,
         zoom: 1.02,
