@@ -39,7 +39,7 @@ class _PointsInterfaceState extends State<PointsInterface> {
       alignment: Alignment.topCenter,
       width: 250,
       height: 50,
-      color: Colors.black,
+      color: Colors.transparent,
       child: Align(
         alignment: Alignment.topCenter,
         child: Text(
