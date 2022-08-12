@@ -1,13 +1,17 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:labirinto_escribo/ghosts/ghosts_spritesheet.dart';
+import 'package:labirinto_escribo/player/player.dart';
 
 class Ghost extends SimpleEnemy with ObjectCollision {
-  Ghost(Vector2 position)
+  final Pacman pacman;
+
+  Ghost(Vector2 position, this.pacman)
       : super(
-            position: position,
-            size: Vector2(28, 28),
-            speed: 40,
-            animation: GhostSpriteSheet.simpleDirectionAnimation) {
+          position: position,
+          size: Vector2(28, 28),
+          speed: 40,
+          animation: GhostSpriteSheet.simpleDirectionAnimation,
+        ) {
     setupCollision(CollisionConfig(enable: true, collisions: [
       CollisionArea.rectangle(
         size: Vector2(20, 20),
@@ -19,12 +23,24 @@ class Ghost extends SimpleEnemy with ObjectCollision {
   @override
   void update(double dt) {
     seeAndMoveToPlayer(
-      closePlayer: (player) {
-        player.die();
+      closePlayer: (
+        player,
+      ) {
+        if (!pacman.havePower) {
+          player.die();
+        } else {
+          removeFromParent();
+        }
       },
       radiusVision: 400,
       margin: 4,
     );
+    if (pacman.havePower) {
+      opacity = 0.3;
+      // animation = InGhostSpriteSheet.simpleDirectionAnimation;
+    } else {
+      opacity = 1;
+    }
     super.update(dt);
   }
 }

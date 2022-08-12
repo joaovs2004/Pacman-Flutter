@@ -1,26 +1,26 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:labirinto_escribo/player/player.dart';
 
-class PointsSpriteSheet {
-  static Future<Sprite> get points => Sprite.load(
+class PowerSpriteSheet {
+  static Future<Sprite> get power => Sprite.load(
         'points.png',
-        srcPosition: Vector2(0, 0),
+        srcPosition: Vector2(0, 1),
         srcSize: Vector2(16, 16),
       );
 }
 
-class Points extends GameDecoration with Sensor {
-  Points(Vector2 position)
+class Power extends GameDecoration with Sensor {
+  Power(Vector2 position)
       : super.withSprite(
-          sprite: PointsSpriteSheet.points,
+          sprite: PowerSpriteSheet.power,
           position: position,
-          size: Vector2(16, 16),
+          size: Vector2(32, 32),
         );
 
   @override
   void onContact(GameComponent component) {
     if (component is Pacman) {
-      (component).addPoints();
+      (component).getPower();
       removeFromParent();
     }
   }

@@ -4,6 +4,7 @@ import 'package:labirinto_escribo/ghosts/ghosts.dart';
 import 'package:labirinto_escribo/player/player.dart';
 import 'package:labirinto_escribo/points/points.dart';
 import 'package:labirinto_escribo/points/points_interface.dart';
+import 'package:labirinto_escribo/power/power.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,29 +34,33 @@ class Game extends StatelessWidget {
     Pacman pacman = Pacman(Vector2(27 * 7, 45 * 7));
 
     return BonfireTiledWidget(
-        joystick: Joystick(
-          keyboardConfig: KeyboardConfig(
-              keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
-          directional: JoystickDirectional(),
-        ),
-        map: TiledWorldMap('map/map.json',
-            objectsBuilder: {
-              'points': (properties) => Points(properties.position),
-              'ghosts': (properties) => Ghost(properties.position)
-            },
-            forceTileSize: const Size(7, 7)),
-        overlayBuilderMap: {
-          'points': (context, game) => PointsInterface(
-                game: game,
-                pacman: pacman,
-              )
+      joystick: Joystick(
+        keyboardConfig: KeyboardConfig(
+            keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
+        directional: JoystickDirectional(),
+      ),
+      map: TiledWorldMap(
+        'map/map.json',
+        objectsBuilder: {
+          'points': (properties) => Points(properties.position),
+          'power': (properties) => Power(properties.position),
+          'ghosts': (properties) => Ghost(properties.position, pacman)
         },
-        initialActiveOverlays: const [PointsInterface.overlaykey],
-        player: pacman,
-        cameraConfig: CameraConfig(
-          moveOnlyMapArea: false,
-          zoom: 1.02,
-          sizeMovementWindow: Vector2(1000, 1000),
-        ));
+        forceTileSize: const Size(7, 7),
+      ),
+      overlayBuilderMap: {
+        'points': (context, game) => PointsInterface(
+              game: game,
+              pacman: pacman,
+            )
+      },
+      initialActiveOverlays: const [PointsInterface.overlaykey],
+      player: pacman,
+      cameraConfig: CameraConfig(
+        moveOnlyMapArea: false,
+        zoom: 1.02,
+        sizeMovementWindow: Vector2(1000, 1000),
+      ),
+    );
   }
 }
