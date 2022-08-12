@@ -1963,6 +1963,28 @@
                  "width":16,
                  "x":251,
                  "y":273
+                }, 
+                {
+                 "class":" ",
+                 "height":31.75,
+                 "id":207,
+                 "name":"teleports",
+                 "rotation":0,
+                 "visible":true,
+                 "width":4.375,
+                 "x":0.125,
+                 "y":216
+                }, 
+                {
+                 "class":"",
+                 "height":31.75,
+                 "id":208,
+                 "name":"teleports",
+                 "rotation":0,
+                 "visible":true,
+                 "width":4.375,
+                 "x":443.4375,
+                 "y":216.25
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1971,7 +1993,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":207,
+ "nextobjectid":209,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.1",

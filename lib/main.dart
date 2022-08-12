@@ -5,6 +5,7 @@ import 'package:labirinto_escribo/player/player.dart';
 import 'package:labirinto_escribo/points/points.dart';
 import 'package:labirinto_escribo/points/points_interface.dart';
 import 'package:labirinto_escribo/power/power.dart';
+import 'package:labirinto_escribo/teleports/teleports.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +45,9 @@ class Game extends StatelessWidget {
         objectsBuilder: {
           'points': (properties) => Points(properties.position),
           'power': (properties) => Power(properties.position),
-          'ghosts': (properties) => Ghost(properties.position, pacman)
+          'ghosts': (properties) => Ghost(properties.position, pacman),
+          'teleports': (properties) =>
+              Teleport(properties.position, properties.id)
         },
         forceTileSize: const Size(7, 7),
       ),
