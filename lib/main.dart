@@ -30,7 +30,7 @@ class Game extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Pacman pacman = Pacman(Vector2(180, 234));
+    Pacman pacman = Pacman(Vector2(27 * 7, 45 * 7));
 
     return BonfireTiledWidget(
         joystick: Joystick(
@@ -52,8 +52,8 @@ class Game extends StatelessWidget {
         initialActiveOverlays: const [PointsInterface.overlaykey],
         player: pacman,
         cameraConfig: CameraConfig(
-          moveOnlyMapArea: false,
-          zoom: 1.02,
-        ));
+            moveOnlyMapArea: false,
+            zoom: 1.02,
+            sizeMovementWindow: Vector2(1000, 1000)));
   }
 }
