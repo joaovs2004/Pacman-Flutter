@@ -1,5 +1,5 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:labirinto_escribo/player.dart';
+import 'package:labirinto_escribo/player/player.dart';
 
 class PointsSpriteSheet {
   static Future<Sprite> get points => Sprite.load('points.png',

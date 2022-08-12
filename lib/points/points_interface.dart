@@ -1,6 +1,6 @@
 import 'package:bonfire/base/bonfire_game.dart';
 import 'package:flutter/material.dart';
-import 'package:labirinto_escribo/player.dart';
+import 'package:labirinto_escribo/player/player.dart';
 import 'dart:async' as async;
 
 class PointsInterface extends StatefulWidget {

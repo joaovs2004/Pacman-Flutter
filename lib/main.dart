@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
-import 'package:labirinto_escribo/ghosts.dart';
-import 'package:labirinto_escribo/player.dart';
-import 'package:labirinto_escribo/points.dart';
-import 'package:labirinto_escribo/points_interface.dart';
+import 'package:labirinto_escribo/ghosts/ghosts.dart';
+import 'package:labirinto_escribo/player/player.dart';
+import 'package:labirinto_escribo/points/points.dart';
+import 'package:labirinto_escribo/points/points_interface.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,9 +34,10 @@ class Game extends StatelessWidget {
 
     return BonfireTiledWidget(
         joystick: Joystick(
-            keyboardConfig: KeyboardConfig(
-                keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
-            directional: JoystickDirectional()),
+          keyboardConfig: KeyboardConfig(
+              keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows),
+          directional: JoystickDirectional(),
+        ),
         map: TiledWorldMap('map/map.json',
             objectsBuilder: {
               'points': (properties) => Points(properties.position),
@@ -52,8 +53,9 @@ class Game extends StatelessWidget {
         initialActiveOverlays: const [PointsInterface.overlaykey],
         player: pacman,
         cameraConfig: CameraConfig(
-            moveOnlyMapArea: false,
-            zoom: 1.02,
-            sizeMovementWindow: Vector2(1000, 1000)));
+          moveOnlyMapArea: false,
+          zoom: 1.02,
+          sizeMovementWindow: Vector2(1000, 1000),
+        ));
   }
 }
