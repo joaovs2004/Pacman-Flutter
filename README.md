@@ -37,4 +37,4 @@ Como fui aprendendo a utilizar o bonfire enquanto realizava o projeto, acabei n√
 
 
 ## Screenshot do projeto
-![Imagem do projeto](https://postimg.cc/bZrCk4fY "Imagem do projeto")
+![Imagem do projeto](https://i.postimg.cc/T3qzMXkb/projeto.png "Imagem do projeto")
