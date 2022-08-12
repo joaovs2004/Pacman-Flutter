@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+import 'package:flutter/material.dart';
 import 'package:labirinto_escribo/player/player_spritesheet.dart';
 import 'dart:async' as async;
 
@@ -34,6 +35,13 @@ class Pacman extends SimplePlayer with ObjectCollision {
   @override
   void die() {
     removeFromParent();
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            content: Text('Voce morreu'),
+          );
+        });
     super.die();
   }
 }

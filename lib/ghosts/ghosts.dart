@@ -4,6 +4,7 @@ import 'package:labirinto_escribo/player/player.dart';
 
 class Ghost extends SimpleEnemy with ObjectCollision {
   final Pacman pacman;
+  bool isVulnerable = false;
 
   Ghost(Vector2 position, this.pacman)
       : super(
@@ -22,20 +23,27 @@ class Ghost extends SimpleEnemy with ObjectCollision {
 
   @override
   void update(double dt) {
+    if (pacman.havePower) {
+      isVulnerable = true;
+    } else {
+      isVulnerable = false;
+    }
+
     seeAndMoveToPlayer(
       closePlayer: (
         player,
       ) {
-        if (!pacman.havePower) {
+        if (!isVulnerable) {
           player.die();
         } else {
-          removeFromParent();
+          position = Vector2(27 * 7, 28 * 7);
+          opacity = 1;
         }
       },
       radiusVision: 400,
       margin: 4,
     );
-    if (pacman.havePower) {
+    if (isVulnerable) {
       opacity = 0.3;
       // animation = InGhostSpriteSheet.simpleDirectionAnimation;
     } else {

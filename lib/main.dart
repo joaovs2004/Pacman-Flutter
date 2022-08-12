@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bonfire/bonfire.dart';
+import 'package:labirinto_escribo/controller/game_controller.dart';
 import 'package:labirinto_escribo/ghosts/ghosts.dart';
 import 'package:labirinto_escribo/player/player.dart';
 import 'package:labirinto_escribo/points/points.dart';
@@ -27,9 +28,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Game extends StatelessWidget {
+class Game extends StatefulWidget {
   const Game({Key? key}) : super(key: key);
 
+  @override
+  State<Game> createState() => _Game();
+}
+
+class _Game extends State<Game> {
   @override
   Widget build(BuildContext context) {
     Pacman pacman = Pacman(Vector2(27 * 7, 45 * 7));
@@ -57,6 +63,7 @@ class Game extends StatelessWidget {
               pacman: pacman,
             )
       },
+      components: [MyGameController()],
       initialActiveOverlays: const [PointsInterface.overlaykey],
       player: pacman,
       cameraConfig: CameraConfig(

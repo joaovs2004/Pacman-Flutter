@@ -36,12 +36,12 @@ class _PointsInterfaceState extends State<PointsInterface> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.topCenter,
-      width: 250,
-      height: 50,
+      alignment: Alignment.bottomRight,
+      width: 120,
+      height: 500,
       color: Colors.transparent,
       child: Align(
-        alignment: Alignment.topCenter,
+        alignment: Alignment.bottomRight,
         child: Text(
           "Pontos $points",
           maxLines: 1,

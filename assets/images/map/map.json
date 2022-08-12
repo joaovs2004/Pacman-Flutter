@@ -942,28 +942,6 @@
                 {
                  "class":"",
                  "height":16,
-                 "id":102,
-                 "name":"points",
-                 "rotation":0,
-                 "visible":true,
-                 "width":16,
-                 "x":191.5,
-                 "y":343
-                }, 
-                {
-                 "class":"",
-                 "height":16,
-                 "id":104,
-                 "name":"points",
-                 "rotation":0,
-                 "visible":true,
-                 "width":16,
-                 "x":191.75,
-                 "y":320
-                }, 
-                {
-                 "class":"",
-                 "height":16,
                  "id":105,
                  "name":"points",
                  "rotation":0,
@@ -1312,29 +1290,6 @@
                  "width":16,
                  "x":259.25,
                  "y":365.5
-                },
-            
-                {
-                 "class":"",
-                 "height":16,
-                 "id":142,
-                 "name":"points",
-                 "rotation":0,
-                 "visible":true,
-                 "width":16,
-                 "x":239.25,
-                 "y":342.75
-                }, 
-                {
-                 "class":"",
-                 "height":16,
-                 "id":143,
-                 "name":"points",
-                 "rotation":0,
-                 "visible":true,
-                 "width":16,
-                 "x":239.5,
-                 "y":321.25
                 }, 
                 {
                  "class":"",
@@ -1357,7 +1312,8 @@
                  "width":16,
                  "x":286,
                  "y":297.5
-                }, 
+                },
+            
                 {
                  "class":"",
                  "height":16,
@@ -1929,8 +1885,7 @@
                  "width":32,
                  "x":9.25,
                  "y":7.5
-                },
-            
+                }, 
                 {
                  "class":"",
                  "height":32,
@@ -1974,7 +1929,8 @@
                  "width":4.375,
                  "x":0.125,
                  "y":216
-                }, 
+                },
+            
                 {
                  "class":"",
                  "height":31.75,
