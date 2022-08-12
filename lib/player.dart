@@ -85,4 +85,10 @@ class Pacman extends SimplePlayer with ObjectCollision {
   void addPoints() {
     points += 10;
   }
+
+  @override
+  void die() {
+    removeFromParent();
+    super.die();
+  }
 }
