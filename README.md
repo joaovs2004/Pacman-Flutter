@@ -1,16 +1,40 @@
 # Segundo teste da Escribo
 
-A new Flutter project.
+Objetivo: O objetivo deste teste é implementar um jogo de labirinto no flutter. Você deverá replicar a jogabilidade desta versão: https://www.google.com/logos/2010/pacman10-i.html
 
-## Getting Started
+O seu jogo deve ser desenvolvido em Flutter utilizando o pacote Bonfire (https://pub.dev/packages/bonfire). O mapa deve ser criado utilizando o Tiled (https://www.mapeditor.org/).
 
-This project is a starting point for a Flutter application.
+## Pré-requisitos
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- [Flutter](https://docs.flutter.dev/get-started/install)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Como rodar
+
+```bash
+# Primeiramente clone o projeto com
+$ git clone https://github.com/joaovs2004/Teste02-Escribo.git
+# Entre na pasta do projeto
+$ cd Teste02-Escribo/
+# Instale as dependencias com
+$ flutter pub get
+```
+
+## Como testar
+
+Você pode testar tanto a versão web como a versão mobile, para isso
+
+```bash
+# Rodando a versão web
+$ flutter run -d chrome
+```
+
+Para rodar a versão mobile você precisará de um emulador android, caso já tenha o android studio instalado, abra o projeto com ele e então execute.
+
+## Observações
+
+Como fui aprendendo a utilizar o bonfire enquanto realizava o projeto, acabei não conseguindo arrumar alguns bugs há tempo e nem implementar certas coisas que eu desejava.
+
+
+## Screenshot do projeto
+![Imagem do projeto](https://postimg.cc/bZrCk4fY "Imagem do projeto")
