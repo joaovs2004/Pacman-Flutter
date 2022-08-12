@@ -1,9 +1,11 @@
 import 'package:bonfire/bonfire.dart';
 import 'package:flutter/material.dart';
+import 'package:labirinto_escribo/main.dart';
 import 'package:labirinto_escribo/points/points.dart';
 
 class MyGameController extends GameComponent {
   bool endgame = false;
+  bool gameOver = false;
 
   @override
   void update(double dt) {
@@ -18,13 +20,49 @@ class MyGameController extends GameComponent {
         showDialog(
             context: context,
             builder: (context) {
-              return const AlertDialog(
-                content: Text('Voce Ganhou'),
+              return AlertDialog(
+                content: const Text('Voce Ganhou'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      _restart();
+                    },
+                    child: const Text('Recomeçar'),
+                  )
+                ],
+              );
+            });
+      }
+
+      if (gameRef.player?.isDead == true && !gameOver) {
+        gameOver = true;
+        showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                content: const Text('Voce morreu'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      _restart();
+                    },
+                    child: const Text('Recomeçar'),
+                  )
+                ],
               );
             });
       }
     }
 
     super.update(dt);
+  }
+
+  void _restart() {
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) {
+        return const Game();
+      }),
+      (route) => false,
+    );
   }
 }

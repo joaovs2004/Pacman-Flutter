@@ -35,13 +35,6 @@ class Pacman extends SimplePlayer with ObjectCollision {
   @override
   void die() {
     removeFromParent();
-    showDialog(
-        context: context,
-        builder: (context) {
-          return const AlertDialog(
-            content: Text('Voce morreu'),
-          );
-        });
     super.die();
   }
 }
