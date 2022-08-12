@@ -25,13 +25,18 @@ class Ghost extends SimpleEnemy with ObjectCollision {
             speed: 40,
             animation: GhostSpriteSheet.simpleDirectionAnimation) {
     setupCollision(CollisionConfig(enable: true, collisions: [
-      CollisionArea.rectangle(size: Vector2(23, 23), align: Vector2(0, 0))
+      CollisionArea.rectangle(size: Vector2(20, 20), align: Vector2(0, 0))
     ]));
   }
 
   @override
   void update(double dt) {
-    seeAndMoveToPlayer(closePlayer: (player) {}, radiusVision: 400);
+    seeAndMoveToPlayer(
+        closePlayer: (player) {
+          player.die();
+        },
+        radiusVision: 400,
+        margin: 4);
     super.update(dt);
   }
 }
