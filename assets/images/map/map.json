@@ -1974,6 +1974,28 @@
                  "width":16,
                  "x":284.75,
                  "y":252.5
+                }, 
+                {
+                 "class":"",
+                 "height":32,
+                 "id":195,
+                 "name":"ghosts",
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":178.5,
+                 "y":215.75
+                }, 
+                {
+                 "class":"",
+                 "height":32,
+                 "id":196,
+                 "name":"ghosts",
+                 "rotation":0,
+                 "visible":true,
+                 "width":32,
+                 "x":235.25,
+                 "y":216
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1982,7 +2004,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":195,
+ "nextobjectid":197,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.9.0",
