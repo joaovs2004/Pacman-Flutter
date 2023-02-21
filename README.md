@@ -13,9 +13,9 @@ O seu jogo deve ser desenvolvido em Flutter utilizando o pacote Bonfire (https:/
 
 ```bash
 # Primeiramente clone o projeto com
-$ git clone https://github.com/joaovs2004/Teste02-Escribo.git
+$ git clone https://github.com/joaovs2004/Pacman-Flutter.git
 # Entre na pasta do projeto
-$ cd Teste02-Escribo/
+$ cd Pacman-Flutter/
 # Instale as dependencias com
 $ flutter pub get
 ```
